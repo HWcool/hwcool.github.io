@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>DevTools调试技巧之快捷键</title>
+    <link href="/2021/04/25/Chrome%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7%E4%B9%8B%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <url>/2021/04/25/Chrome%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7%E4%B9%8B%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><p>能直接提升开发调试效率的技巧是什么？</p><ul><li>掌握快捷键</li></ul><p>这是一些在日常调试中最常用的一些快捷键方法</p><h2 id="1-切换dev-Toos-布局窗口"><a href="#1-切换dev-Toos-布局窗口" class="headerlink" title="1.切换dev Toos 布局窗口"></a>1.切换dev Toos 布局窗口</h2><p>一般我在使用 DevTools 时， dock 的展示窗口都在底部 ，但是有时候我想把 dock 的窗口 切换到右边。</p><p>怎么做呢？</p><p>这时就可以通过 DevTools 的下拉菜单，或者命令菜单…或者使用一个快捷键 <font color=HotPink>ctrl + shift + D (⌘ + shift + D Mac)</font>来实现位置的切换（通常是从 开始的位置 到 右边位置， 但是如果一开始就是 右边的位置 那么会切换到 左边的位置）:<br><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c07cf50125757?imageslim" alt="Chrome 切换调试布局" title="快速切换布局方式示意图"></p><h2 id="2-快速切换面板栏"><a href="#2-快速切换面板栏" class="headerlink" title="2.快速切换面板栏"></a>2.快速切换面板栏</h2><p>如果我们想快速的从console面板切换到elements面板，如何操作呢？</p><ul><li><p>按下<font color="Hotpink"> ctrl + [</font> 和 <font color="Hotpink"> ctrl + ]</font>可以从当前面板的分别向左和向右切换面板。</p></li><li><p>按下<font color="Hotpink">ctrl + 1</font> 到<font color="Hotpink">ctrl + 9</font>可以直接转到编号1…9的面板(ctrl + 1转到元素面板，ctrl + 4` 转到 网络信息面板等等)<br><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c07cf4d56febf?imageslim" title="快速切换面板示意图"></p></li></ul><blockquote><p>请注意! 我们在上面介绍的快捷键方式默认被禁用了。你可以通过 DevTools&gt;&gt;Settings &gt;&gt;Preferences&gt;&gt;<em>Appearance</em> 打开这个选项：</p></blockquote><blockquote><p>如果不设置的话，这个快捷键方式默认切换的window的tab</p></blockquote><h2 id="3-递增-递减"><a href="#3-递增-递减" class="headerlink" title="3.递增/递减"></a>3.递增/递减</h2><p>接下来这个技巧，对调整样式是最有用的：通过使用 带有 或者 不带有修饰键 的 上 / 下 箭头按键， 你可以实现递增和递减 0.1 ， 1 或者 10 这样数值类型的值。<br><img src="https://user-gold-cdn.xitu.io/2018/12/18/167c07cf43b2f06e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></p><p>甚至对颜色都起作用！（虽然没什么卵用，但是真的可以起作用~）</p><h2 id="4-elements，-logs，-sources-amp-network-中的查找"><a href="#4-elements，-logs，-sources-amp-network-中的查找" class="headerlink" title="4.elements， logs， sources &amp; network 中的查找"></a>4.elements， logs， sources &amp; network 中的查找</h2><p>DevTools 中的前4个主要的面板，每一个都支持<font color="Hotpink">[ctrl] + [f]</font>快捷方式，你可以使用对应的查询方式来查找信息:</p><ul><li>在 Elements 面板中 - 通过 string ，选择器 或者 XPath 来查找</li><li>而在 Console， Network 以及 Source 面板 - 通过区分大小写，或者可以被视为表达式的 strings， 来查找</li></ul><p><img src="https://user-gold-cdn.xitu.io/2019/1/22/168747e72320ff3a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" title="search 的高级用法"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>前端技术</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>认识Chrome-DevTools</title>
     <link href="/2021/04/21/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20Chrome%20%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/"/>
     <url>/2021/04/21/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20Chrome%20%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
