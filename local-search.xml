@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>如何实现无限累加的一个函数</title>
+    <link href="/2021/05/13/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%97%A0%E9%99%90%E7%B4%AF%E5%8A%A0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0/"/>
+    <url>/2021/05/13/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%97%A0%E9%99%90%E7%B4%AF%E5%8A%A0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h2 id="关于这个文章"><a href="#关于这个文章" class="headerlink" title="关于这个文章"></a>关于这个文章</h2><p> 今天早上看了几页放了半个月的犀牛书，有去看了下函数的部分。下午的时候忽然看到这个标题了，就来写一下😁</p><h2 id="JavaScript-高阶函数-函数科里化"><a href="#JavaScript-高阶函数-函数科里化" class="headerlink" title="JavaScript 高阶函数  函数科里化"></a>JavaScript 高阶函数  函数科里化</h2><p> 这两个都是JavaScript函数的一些高阶使用方法的概念，具体的还是要在实践中慢慢去体会。言归正传，来实现一下这个面试题<br> 我在网上看到两个精妙的实现方法 来看看大佬们怎么实现的</p><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>这是一个叫山月的大佬的文章<a href="https://q.shanyue.tech/fe/js/428.html">文章地址</a></p><p>这是一个关于懒计算的函数，使用 sum 收集所有累加项，使用 valueOf 进行计算</p><ol><li>sum 返回一个函数，收集所有的累加项，使用递归实现</li><li>返回的函数带有 valueOf的方法，用于统一计算所有的值</li></ol><figure class="highlight actionscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs actionscript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span><span class="hljs-params">(<span class="hljs-rest_arg">...args</span>)</span> </span>&#123;<br>  <span class="hljs-keyword">const</span> f = (...res) =&gt; sum(...args, ...res);<br>  f.valueOf = () =&gt; args.reduce((acc, cur) =&gt; &#123; x + y &#125;, <span class="hljs-number">0</span>)<br>  <span class="hljs-keyword">return</span> f<br>&#125;<br></code></pre></div></td></tr></table></figure><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>  这个大佬的写法也很佩服<a href="https://blog.csdn.net/sinat_36048532/article/details/109214580">地址</a><br>  具体代码如下<br>  <figure class="highlight actionscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs actionscript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">curry</span><span class="hljs-params">(fn, <span class="hljs-rest_arg">...args1</span>)</span> </span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-rest_arg">...args2</span>)</span> </span>&#123;<br>    let allArgs = [...args1, ...args2];<br>    <span class="hljs-keyword">if</span>(args2.length === <span class="hljs-number">0</span>) &#123;<br>      <span class="hljs-comment">// 求和</span><br>      <span class="hljs-keyword">return</span> fn(...allArgs);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-comment">// 科利华收集参数</span><br>      <span class="hljs-keyword">return</span> curry(fn, ...allArgs);<br>    &#125;<br>  &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span><span class="hljs-params">(<span class="hljs-rest_arg">...args</span>)</span> </span>&#123;<br>  let res = <span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">for</span>(let i of args) &#123;<br>      res += i;<br>  &#125;<br>  <span class="hljs-keyword">return</span> res;<br>&#125;<br>let add = curry(sum);<br>console.log(add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)(<span class="hljs-number">4</span>)(<span class="hljs-number">5</span>, <span class="hljs-number">6</span>)(<span class="hljs-number">7</span>)());<br></code></pre></div></td></tr></table></figure></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>面试题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>前端的错误处理</title>
     <link href="/2021/05/10/%E5%89%8D%E7%AB%AF%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/"/>
     <url>/2021/05/10/%E5%89%8D%E7%AB%AF%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</url>
