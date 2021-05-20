@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>一个在线生成css 三角形的工具</title>
+    <link href="/2021/05/20/%E4%B8%80%E4%B8%AA%E5%9C%A8%E7%BA%BF%E7%94%9F%E6%88%90css-%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E5%B7%A5%E5%85%B7/"/>
+    <url>/2021/05/20/%E4%B8%80%E4%B8%AA%E5%9C%A8%E7%BA%BF%E7%94%9F%E6%88%90css-%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E5%B7%A5%E5%85%B7/</url>
+    
+    <content type="html"><![CDATA[<h1 id="css-triangle-generate"><a href="#css-triangle-generate" class="headerlink" title="css-triangle-generate"></a>css-triangle-generate</h1><p><img src="https://files.catbox.moe/6c9c72.png" alt="css-triangle-generate" title="三角形样式生成器"></p><p><a href="https://blog.hjplay.cn/css-triangle-generate/">在线预览地址</a></p><p>实现了如下的基本功能</p><ul><li>可调整三角形的高度</li><li>可调整三角形的宽度</li><li>可调整三角形的角度</li><li>可调整三角形的背景色</li></ul><p>使用了Vue3.0 版本 和ant-design 写的一个小玩意，具体也没啥好说的，比较简单功能的一个页面。主要是想体验下vue3.0版本的使用方法…</p><p>自vue3.0出来之后，一直没有用过，一部分是因为当前工作中事情比较多，另一方面是因为当前工作中使用vue2.0版本比较多的。这次就拿这个来试试手吧</p><p>也算对vue3的语法有个基本了解了吧</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>自动帮你找出package.json中未使用到的依赖项</title>
     <link href="/2021/05/14/%E8%87%AA%E5%8A%A8%E5%B8%AE%E4%BD%A0%E6%89%BE%E5%87%BApackage-json%E4%B8%AD%E6%9C%AA%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E4%BE%9D%E8%B5%96%E9%A1%B9/"/>
     <url>/2021/05/14/%E8%87%AA%E5%8A%A8%E5%B8%AE%E4%BD%A0%E6%89%BE%E5%87%BApackage-json%E4%B8%AD%E6%9C%AA%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E4%BE%9D%E8%B5%96%E9%A1%B9/</url>
